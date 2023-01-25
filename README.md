@@ -1,6 +1,6 @@
 # Vending-machine
 
-commit convention
+### commit convention
 :sparkles: Feat: 새로운 기능 추가 <br />
 :label: MarkUp: 마크업 <br />
 :lipstick: Design : CSS, 사용자 UI 디자인 변경 <br />
