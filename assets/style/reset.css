@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap");
 
 :root {
-  --font: 'Noto Sans KR', sans-serif;
+  --font: "Noto Sans KR", sans-serif;
 }
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font-family: var(--font);
-    vertical-align: baseline;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: var(--font);
+  vertical-align: baseline;
 }
 
 article,
@@ -21,16 +21,20 @@ footer,
 header,
 nav,
 section {
-    display: block;
+  display: block;
+}
+
+html {
+  font-size: 10px;
 }
 
 body {
-    line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 a {
@@ -38,16 +42,17 @@ a {
 }
 
 button {
-    background: none;
-    color: inherit;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-input, textarea,
+input,
+textarea,
 input::placeholder {
-  font: inherit;;
+  font: inherit;
 }
