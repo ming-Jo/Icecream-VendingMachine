@@ -1,12 +1,57 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IceCream</title>
+    <link rel="stylesheet" href="./assets/style/reset.css" />
+    <link rel="stylesheet" href="./assets/style/style.css" />
+  </head>
+  <body>
+    <article id="app">
+      <h1 class="tit-app">
+        <img src="" alt="IceCream" class="img-item" />
+      </h1>
+      <section class="vending-machine">
+        <h2 class="ir">자판기 화면</h2>
+        <ul class="list-item"></ul>
+        <div class="cont-myitems">
+          <strong class="tit-myitem">Pick up</strong>
+          <ul class="list-item-staged"></ul>
+          <strong class="txt-total">총금액 : 0 원</strong>
+        </div>
+      </section>
+
+      <section class="my-info">
+        <h2 class="ir">나의 정보</h2>
+        <div class="cont-mymoney">
+          <div class="info-mymoney">
+            소지금 :
+            <span class="txt-mymoney">3,000,000 원</span>
+          </div>
+        </div>
+
+        <section class="cont-buy">
+          <h3 class="ir">구입 관련 정보</h3>
+          <div class="info-balance">
+            잔액 :
+            <span class="txt-balance">원</span>
+          </div>
+          <button type="button" class="btn-return">거스름돈 반환</button>
+          <label for="inpPut" class="ir">입금할 금액을 입력합니다.</label>
+          <input
+            type="number"
+            id="inpPut"
+            class="inp-put"
+            placeholder="입금액 입력"
+          />
+          <button type="button" class="btn-put">입금</button>
+          <ul class="list-item-staged"></ul>
+          <button type="button" class="btn-get">주문하기</button>
+        </section>
+      </section>
+    </article>
+    <script type="module" src="./assets/script/index.js"></script>
+  </body>
 </html>
