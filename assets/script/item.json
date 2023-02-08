@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Real Vanilla Bean",
+    "cost": 2500,
+    "img": "Vanilla.png",
+    "count": 5
+  },
+  {
+    "name": "Strawberry Cheese",
+    "cost": 2500,
+    "img": "Strawberry.png",
+    "count": 5
+  },
+  {
+    "name": "Matcha Green Tea",
+    "cost": 2500,
+    "img": "GreenTea.png",
+    "count": 5
+  },
+  {
+    "name": "Blueberry Cheese",
+    "cost": 2500,
+    "img": "Blueberry.png",
+    "count": 5
+  },
+  {
+    "name": "Mint Chocolate",
+    "cost": 2500,
+    "img": "MintChocolate.png",
+    "count": 5
+  },
+  {
+    "name": "Chocolate Chips",
+    "cost": 2500,
+    "img": "Chocolate.png",
+    "count": 5
+  }
+]
