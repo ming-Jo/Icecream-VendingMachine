@@ -1,4 +1,17 @@
-# Vending-machine
+# :icecream: Icecream Vending Machine
+`JavaScript`로 구현한 아이스크림 자판기 입니다.    
+소지금 내에서 금액을 입금하여 아이스크림을 주문할 수 있습니다.    
+6가지의 맛 중 원하는 맛을 고를 수 있습니다.
+
+<br>
+
+## :gear: 구현 기능
+- 소지금을 기준으로 금액 입금
+- 거스름돈 반환
+- 아이스크림 주문 내역 리스트 표시
+- 재고 소진 시 sold-out 표시
+
+<br>
 
 ### commit convention
 :sparkles: Feat: 새로운 기능 추가 <br />
