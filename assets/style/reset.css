@@ -2,6 +2,7 @@
 
 :root {
   --font: "Noto Sans KR", sans-serif;
+  font-size: 10px;
 }
 
 * {
@@ -46,6 +47,7 @@ button {
   color: inherit;
   border: none;
   padding: 0;
+  margin: 0;
   font: inherit;
   cursor: pointer;
   outline: inherit;
