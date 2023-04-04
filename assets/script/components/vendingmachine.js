@@ -1,3 +1,5 @@
+import Modal from "./modal.js";
+
 class VendingMachine {
   constructor() {
     const vMachine = document.querySelector(".vending-machine");
@@ -41,8 +43,14 @@ class VendingMachine {
      * 입금액 인풋창은 초기화됩니다.
      * */
 
+    const modal = new Modal();
+
     this.btnPut.addEventListener("click", (event) => {
       // function 키워드로 쓰면 아래의 this가 this.btnPut 가리킴
+      if (!this.inputCostEl.value) {
+        console.log("입금액을 입력하세요.");
+        modal.createModal();
+      }
       const inputCost = parseInt(this.inputCostEl.value);
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", "")); // 쉼표를 제거
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
@@ -72,6 +80,9 @@ class VendingMachine {
      */
 
     this.btnReturn.addEventListener("click", (event) => {
+      if (this.balance.textContent.length === 1) {
+        console.log("잔액이 없어요.");
+      }
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
 
