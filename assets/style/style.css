@@ -182,9 +182,7 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   background-color: var(--white-blue);
-  /* padding: 2.4rem 2.7rem; */
   border-radius: 1rem;
-  /* box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2); */
 }
 
 .cont-buy .inp-put {
@@ -202,10 +200,7 @@ body {
 .cont-buy .btn-return,
 .cont-buy .btn-put,
 .cont-buy .btn-get {
-  border-radius: 0.5rem;
-  background-color: var(--light-blue);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-  font-size: 1.3rem;
 }
 
 .cont-buy .btn-return,
@@ -215,6 +210,22 @@ body {
   font-size: 1.6rem;
   color: white;
   padding: 1.2rem;
+  border-radius: 5rem;
+}
+
+.cont-buy .btn-put {
+  border-radius: 0.5rem;
+  background-color: white;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  font-size: 1.3rem;
+}
+
+.cont-buy .btn-return:hover,
+.cont-buy .btn-put:hover,
+.cont-buy .btn-get:hover {
+  box-shadow: inset 0 0 0 2px var(--blue);
+  background-color: white;
+  color: var(--blue);
 }
 
 .cont-buy .info-balance {
@@ -222,11 +233,6 @@ body {
   padding: 1.4rem 1rem;
   font-size: 1.2rem;
   text-align: left;
-}
-
-.cont-buy .btn-return:hover {
-  box-shadow: inset 0 0 0 2px var(--blue);
-  background-color: white;
 }
 
 .cont-buy .info-balance .txt-balance {
