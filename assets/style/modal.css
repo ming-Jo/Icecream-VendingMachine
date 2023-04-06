@@ -1,0 +1,58 @@
+.modal-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+}
+
+.modal-wrap .btn-close-modal {
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 1.8rem;
+  right: 1.8rem;
+  background: url("/assets/images/off_icon.png") no-repeat center/cover;
+}
+
+.modal-wrap .modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: calc(100vw / 3.2);
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 1.5rem;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal::before {
+  content: " ";
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3.8rem;
+  height: 3.8rem;
+  background: url("/assets/images/icon-notice.png") no-repeat center/cover;
+}
+
+.modal .modal-info-text {
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 10rem 4rem 0;
+  line-height: 130%;
+  margin-bottom: 0.4rem;
+}
+
+.modal .modal-info-text-bold {
+  display: block;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0 4rem 4rem;
+  line-height: 130%;
+}
