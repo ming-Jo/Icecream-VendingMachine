@@ -48,8 +48,7 @@ class VendingMachine {
     this.btnPut.addEventListener("click", (event) => {
       // function 키워드로 쓰면 아래의 this가 this.btnPut 가리킴
       if (!this.inputCostEl.value) {
-        console.log("입금액을 입력하세요.");
-        modal.createModal();
+        modal.createModal("입금할 금액이 없네요.", "금액을 입력해주세요!");
       }
       const inputCost = parseInt(this.inputCostEl.value);
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", "")); // 쉼표를 제거
@@ -59,7 +58,6 @@ class VendingMachine {
         // 값이 있을 때만 작동하도록 하는 if문
         // 입금액이 소지금보다 적다면
         if (inputCost <= myMoneyVal && inputCost > 0) {
-          //Intl.NumberFormat : 언어에 맞는 숫자 서식을 문자열로 반환합니다. IE11 부터 지원
           this.myMoney.textContent =
             new Intl.NumberFormat().format(myMoneyVal - inputCost) + "원";
           this.balance.textContent =
@@ -67,7 +65,10 @@ class VendingMachine {
               (balanceVal ? balanceVal : 0) + inputCost
             ) + " 원";
         } else {
-          alert("소지금이 부족합니다.");
+          modal.createModal(
+            "소지금이 부족해요.",
+            "소지금 이하의 금액만 입금 가능합니다."
+          );
         }
         this.inputCostEl.value = null;
       }
@@ -81,7 +82,7 @@ class VendingMachine {
 
     this.btnReturn.addEventListener("click", (event) => {
       if (this.balance.textContent.length === 1) {
-        console.log("잔액이 없어요.");
+        modal.createModal("반환할 금액이 없어요.", "돈을 입금해주세요!");
       }
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
@@ -150,6 +151,7 @@ class VendingMachine {
           }
         } else {
           alert("잔액이 부족합니다. 돈을 입금해주세요.");
+          modal.createModal("잔액이 부족해요.", "돈을 입금해주세요!");
         }
       });
     });
@@ -162,6 +164,10 @@ class VendingMachine {
     this.btnGet.addEventListener("click", (event) => {
       let isGot = false;
       let totalPrice = 0;
+
+      if (totalPrice === 0) {
+        modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
+      }
 
       // 내가 고른 아이스크림 목록과 이미 구입한 목록을 비교
       for (const itemStaged of this.stagedList.querySelectorAll("li")) {
