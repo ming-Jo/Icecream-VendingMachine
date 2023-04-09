@@ -12,6 +12,9 @@ class Modal {
     irText.classList.add("ir");
     irText.textContent = "알림창";
 
+    const backdrop = document.createElement("div");
+    backdrop.classList.add("backdrop");
+
     const closeModalBtn = document.createElement("button");
     closeModalBtn.setAttribute("type", "button");
     closeModalBtn.classList.add("btn-close-modal");
@@ -28,7 +31,7 @@ class Modal {
     modalInfoTextBold.textContent = textBold;
 
     modalDiv.append(modalInfoText, modalInfoTextBold);
-    modalWrap.append(irText, closeModalBtn, modalDiv);
+    modalWrap.append(irText, backdrop, closeModalBtn, modalDiv);
     $body.appendChild(modalWrap);
   }
 
@@ -36,8 +39,12 @@ class Modal {
     const $body = document.querySelector("body");
     const $modalWrap = document.querySelector(".modal-wrap");
     const $closeModalBtn = document.querySelector(".btn-close-modal");
+    const $backdrop = document.querySelector(".backdrop");
+
+    $backdrop.addEventListener("click", (event) => {
+      $body.removeChild($modalWrap);
+    });
     $closeModalBtn.addEventListener("click", (event) => {
-      console.log(event.currentTarget);
       $body.removeChild($modalWrap);
     });
   }
