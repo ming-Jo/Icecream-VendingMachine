@@ -69,6 +69,7 @@ class VendingMachine {
             "소지금이 부족해요.",
             "소지금 이하의 금액만 입금 가능합니다."
           );
+          modal.removeModal();
         }
         this.inputCostEl.value = null;
       }
@@ -83,6 +84,7 @@ class VendingMachine {
     this.btnReturn.addEventListener("click", (event) => {
       if (this.balance.textContent.length === 1) {
         modal.createModal("반환할 금액이 없어요.", "돈을 입금해주세요!");
+        modal.removeModal();
       }
       const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
@@ -150,8 +152,8 @@ class VendingMachine {
             targetEl.parentElement.insertBefore(warning, targetEl);
           }
         } else {
-          alert("잔액이 부족합니다. 돈을 입금해주세요.");
           modal.createModal("잔액이 부족해요.", "돈을 입금해주세요!");
+          modal.removeModal();
         }
       });
     });
@@ -167,6 +169,7 @@ class VendingMachine {
 
       if (totalPrice === 0) {
         modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
+        modal.removeModal();
       }
 
       // 내가 고른 아이스크림 목록과 이미 구입한 목록을 비교
