@@ -31,6 +31,16 @@ class Modal {
     modalWrap.append(irText, closeModalBtn, modalDiv);
     $body.appendChild(modalWrap);
   }
+
+  removeModal() {
+    const $body = document.querySelector("body");
+    const $modalWrap = document.querySelector(".modal-wrap");
+    const $closeModalBtn = document.querySelector(".btn-close-modal");
+    $closeModalBtn.addEventListener("click", (event) => {
+      console.log(event.currentTarget);
+      $body.removeChild($modalWrap);
+    });
+  }
 }
 
 export default Modal;
