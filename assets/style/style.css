@@ -31,6 +31,7 @@
 
 /* 레이아웃 */
 body {
+  width: 100vw;
   height: 100vh;
   background: linear-gradient(
       135deg,
@@ -40,29 +41,17 @@ body {
       rgba(215, 208, 255, 1) 100%
     )
     no-repeat center/cover;
+  overflow: hidden;
 }
 
 #app {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0 2.4rem;
+  flex-direction: column;
+  align-items: center;
   padding-top: 14rem;
+  height: 100vh;
   font-weight: 500;
   position: relative;
-}
-
-#app::before {
-  content: " ";
-  position: absolute;
-  top: 6rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 78rem;
-  height: calc(100vh - 12rem);
-  background-color: #ebf9ff;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
-  z-index: -1;
 }
 
 #app .tit-app {
@@ -72,6 +61,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
 }
+
 #app .tit-app::before {
   content: " ";
   width: 80.6rem;
@@ -91,16 +81,54 @@ body {
   object-fit: cover;
 }
 
-.list-item-staged {
-  min-height: 16rem;
-  padding: 1.2rem;
-  overflow-y: scroll;
-  border: 1px solid var(--blue);
-  background-color: var(--light-blue);
-  border-radius: 0.5rem;
+#app .content-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.4rem;
+  padding: 2.4rem 0 7.4rem 0;
+  overflow-y: auto;
 }
 
-/* scroll design */
+.content-wrap::before {
+  content: " ";
+  position: absolute;
+  top: 6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 78rem;
+  height: calc(100vh - 6rem);
+  background-color: #ebf9ff;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+#app footer {
+  position: fixed;
+  bottom: 0;
+  width: 78rem;
+  padding: 2rem;
+  color: white;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  background-color: #b1e2ff;
+  box-shadow: 0px -3px 4px rgba(97, 145, 208, 0.1);
+}
+
+/* scroll design 시작 */
+.content-wrap::-webkit-scrollbar {
+  width: 0.8rem;
+}
+.content-wrap::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background-color: var(--lavender);
+  background-clip: padding-box;
+  border: 2px solid transparent;
+}
+.content-wrap::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
 .list-item-staged::-webkit-scrollbar {
   width: 0.8rem;
 }
@@ -112,6 +140,16 @@ body {
 }
 .list-item-staged::-webkit-scrollbar-track {
   background-color: transparent;
+}
+/* scroll design 끝 */
+
+.list-item-staged {
+  min-height: 16rem;
+  padding: 1.2rem;
+  overflow-y: scroll;
+  border: 1px solid var(--blue);
+  background-color: var(--light-blue);
+  border-radius: 0.5rem;
 }
 
 .list-item-staged li {
@@ -151,17 +189,87 @@ body {
   width: 3rem;
 }
 
-/* media */
-@media only screen and (min-width: 320px) and (max-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
-    background-color: #fff;
+@media only screen and (max-width: 650px) {
+  #app {
+    padding-top: 12.8rem;
   }
 
-  #app {
-    padding-top: 9.6rem;
+  #app .content-wrap {
+    gap: 2.4rem 0;
+    padding-bottom: 2.6rem;
+  }
+
+  .content-wrap::before {
+    display: none;
+  }
+
+  .content-wrap .vending-machine {
+    flex-basis: 44rem;
+  }
+
+  .content-wrap .my-info {
+    flex-basis: 44rem;
+    gap: 2.4rem;
+  }
+
+  #app footer {
+    color: #8cd5ff;
+    background-color: transparent;
+  }
+
+  footer .copyright::after {
+    content: " ";
+    width: 78rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a4deff;
+    background-color: white;
+    filter: blur(2px);
+    opacity: 88%;
+    z-index: -1;
   }
 
   #app .tit-app {
-    width: 16.6rem;
+    display: flex;
+  }
+
+  .modal-wrap .modal {
+    width: calc(100vw / 2);
+  }
+}
+
+@media only screen and (min-width: 651px) and (max-width: 744px) {
+  #app {
+    padding-top: 12.8rem;
+  }
+
+  .content-wrap::before {
+    display: none;
+  }
+  
+  .content-wrap .my-info {
+    flex-basis: 46rem;
+    gap: 2.4rem;
+  }
+
+  #app footer {
+    color: #8cd5ff;
+    background-color: transparent;
+  }
+
+  footer .copyright::after {
+    content: " ";
+    width: 78rem;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #a4deff;
+    background-color: white;
+    filter: blur(2px);
+    opacity: 88%;
+    z-index: -1;
   }
 }

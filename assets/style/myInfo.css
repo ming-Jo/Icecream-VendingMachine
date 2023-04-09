@@ -1,5 +1,5 @@
 /* 나의 정보 스타일 */
-#app .my-info {
+.content-wrap .my-info {
   display: flex;
   flex-basis: 26rem;
   flex-direction: column;
@@ -10,7 +10,7 @@
   padding: 2rem;
 }
 
-#app .my-info .cont-mymoney {
+.content-wrap .my-info .cont-mymoney {
   padding: 0.6rem 0.8rem;
   background-color: var(--white-blue);
   background-color: white;
@@ -20,7 +20,6 @@
 
 .my-info .info-mymoney {
   padding: 0.6rem 1rem;
-  /* background-color: var(--light-blue); */
   border-radius: 0.5rem;
   font-size: 1.2rem;
   line-height: 2rem;

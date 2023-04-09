@@ -1,5 +1,5 @@
 /* 자판기 스타일 */
-#app .vending-machine {
+.content-wrap .vending-machine {
   flex-basis: 46rem;
   padding: 1.8rem;
   background-color: white;
