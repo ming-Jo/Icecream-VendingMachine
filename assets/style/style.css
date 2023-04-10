@@ -1,9 +1,9 @@
 @charset 'utf-8';
 
-@import "/assets/style/reset.css";
-@import "/assets/style/vendingmachine.css";
-@import "/assets/style/myInfo.css";
-@import "/assets/style/modal.css";
+@import "./reset.css";
+@import "./vendingmachine.css";
+@import "./myInfo.css";
+@import "./modal.css";
 
 :root {
   --black: #1c1c1c;

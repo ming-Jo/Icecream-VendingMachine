@@ -22,7 +22,7 @@
   position: absolute;
   top: 1.8rem;
   right: 1.8rem;
-  background: url("/assets/images/off_icon.png") no-repeat center/cover;
+  background: url("../images/off_icon.png") no-repeat center/cover;
 }
 
 .modal-wrap .modal {
@@ -47,7 +47,7 @@
   transform: translateX(-50%);
   width: 3.8rem;
   height: 3.8rem;
-  background: url("/assets/images/icon-notice.png") no-repeat center/cover;
+  background: url("../images/icon-notice.png") no-repeat center/cover;
 }
 
 .modal .modal-info-text {
