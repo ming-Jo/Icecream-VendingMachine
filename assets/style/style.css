@@ -108,10 +108,10 @@ body {
   bottom: 0;
   width: 78rem;
   padding: 2rem;
-  color: white;
+  color: #91a1af;
   letter-spacing: 0.1rem;
   text-align: center;
-  background-color: #b1e2ff;
+  background-color: #c0e8ff;
   box-shadow: 0px -3px 4px rgba(97, 145, 208, 0.1);
 }
 
@@ -189,60 +189,14 @@ body {
   width: 3rem;
 }
 
-@media only screen and (max-width: 650px) {
+/* media 시작 */
+@media only screen and (max-width: 744px) {
   #app {
     padding-top: 12.8rem;
   }
 
   #app .content-wrap {
-    gap: 2.4rem 0;
-    padding-bottom: 2.6rem;
-  }
-
-  .content-wrap::before {
-    display: none;
-  }
-
-  .content-wrap .vending-machine {
-    flex-basis: 44rem;
-  }
-
-  .content-wrap .my-info {
-    flex-basis: 44rem;
-    gap: 2.4rem;
-  }
-
-  #app footer {
-    color: #8cd5ff;
-    background-color: transparent;
-  }
-
-  footer .copyright::after {
-    content: " ";
-    width: 78rem;
-    height: 5rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #a4deff;
-    background-color: white;
-    filter: blur(2px);
-    opacity: 88%;
-    z-index: -1;
-  }
-
-  #app .tit-app {
-    display: flex;
-  }
-
-  .modal-wrap .modal {
-    width: calc(100vw / 2);
-  }
-}
-
-@media only screen and (min-width: 651px) and (max-width: 744px) {
-  #app {
-    padding-top: 12.8rem;
+    padding-bottom: 7.4rem;
   }
 
   .content-wrap::before {
@@ -251,7 +205,8 @@ body {
   
   .content-wrap .my-info {
     flex-basis: 46rem;
-    gap: 2.4rem;
+    gap: 4.8rem;
+    padding: 4rem 6rem;
   }
 
   #app footer {
@@ -266,10 +221,20 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #a4deff;
     background-color: white;
     filter: blur(2px);
     opacity: 88%;
     z-index: -1;
   }
 }
+
+@media only screen and (max-width: 650px) {
+  .content-wrap .vending-machine {
+    flex-basis: 44rem;
+  }
+
+  .content-wrap .my-info {
+    flex-basis: 44rem;
+  }
+}
+/* media 끝 */

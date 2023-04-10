@@ -29,7 +29,8 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: calc(100vw / 3.2);
+  min-width: 20rem;
+  max-width: 30rem;
   top: 50%;
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
