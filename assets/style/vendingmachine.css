@@ -101,9 +101,33 @@
 
 .cont-myitems .list-item-staged {
   min-height: 20rem;
-  filter: blur(5px);
 }
 
 .cont-myitems .list-item-staged li {
   padding: 0.8rem;
+}
+
+.cont-myitems .list-item-staged .img-item {
+  width: 4rem;
+}
+
+.cont-myitems .list-item-staged .txt-item {
+  font-size: 1.2rem;
+}
+
+.cont-myitems .list-item-staged .num-counter {
+  font-size: 1.4rem;
+  width: 3.6rem;
+  height: 3.6rem;
+  border: 2px solid var(--blue);
+}
+
+.cont-myitems .blur {
+  filter: blur(5px);
+  transition: filter 1s ease-in;
+}
+
+.cont-myitems .blur:hover {
+  filter: blur(0);
+  transition: filter 0.8s;
 }
