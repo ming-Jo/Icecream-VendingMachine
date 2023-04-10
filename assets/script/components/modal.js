@@ -35,16 +35,15 @@ class Modal {
   }
 
   removeModal() {
-    const $body = document.querySelector("body");
     const $modalWrap = document.querySelector(".modal-wrap");
     const $closeModalBtn = document.querySelector(".btn-close-modal");
     const $backdrop = document.querySelector(".backdrop");
 
-    $backdrop.addEventListener("click", (event) => {
-      $body.removeChild($modalWrap);
+    $backdrop.addEventListener("click", () => {
+      $modalWrap.remove();
     });
-    $closeModalBtn.addEventListener("click", (event) => {
-      $body.removeChild($modalWrap);
+    $closeModalBtn.addEventListener("click", () => {
+      $modalWrap.remove();
     });
   }
 }

@@ -164,11 +164,14 @@ class VendingMachine {
      * 획득 버튼을 누르면 선택한 아이스크림 목록이 획득한 아이스크림 목록으로 이동합니다.
      * 획득한 아이스크림의 금액을 모두 합하여 총금액을 업데이트 합니다.
      */
-    this.observeNodes();
-
     this.btnGet.addEventListener("click", () => {
       let isGot = false;
       let totalPrice = 0;
+
+      if (this.txtTotal.textContent.length !== 9 && this.stagedList.childNodes.length === 0) {
+        modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
+        modal.removeModal();
+      }
 
       // 내가 고른 아이스크림 목록과 이미 구입한 목록을 비교
       for (const itemStaged of this.stagedList.querySelectorAll("li")) {
@@ -207,33 +210,6 @@ class VendingMachine {
         modal.removeModal();
       }
     });
-  }
-
-  observeNodes() {
-    const modal = new Modal();
-
-    const target = this.stagedList;
-
-    const callback = () => {
-      const $stagedListItem = this.stagedList.querySelector("li");
-      if (!$stagedListItem) {
-        this.btnGet.addEventListener("click", () => {
-          modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
-          modal.removeModal();
-        })
-      }
-    };
-  
-    const observer = new MutationObserver(callback);
-  
-    const config = {
-      attributes: true, // 속성 변화 할때 감지
-      childList: true, // 자식노드 추가/제거 감지
-      subtree: true, // 손자노드까지 추가/제거 감지
-      characterData: true, // 데이터 변경전 내용 기록
-    };
-  
-    observer.observe(target, config);
   }
 }
 
