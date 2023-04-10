@@ -5,7 +5,6 @@ class VendingMachine {
     const vMachine = document.querySelector(".vending-machine");
     this.itemList = vMachine.querySelector(".list-item");
     this.gotList = vMachine.querySelector(".list-item-staged");
-    this.txtTotal = vMachine.querySelector(".txt-total");
 
     const myinfo = document.querySelector(".my-info");
     this.myMoney = myinfo.querySelector(".txt-mymoney");
@@ -15,6 +14,7 @@ class VendingMachine {
     this.btnReturn = myinfo.querySelector(".btn-return");
     this.btnGet = myinfo.querySelector(".btn-get");
     this.stagedList = myinfo.querySelector(".list-item-staged");
+    this.txtTotal = myinfo.querySelector(".txt-total");
   }
   setup() {
     this.bindEvents();
@@ -49,6 +49,7 @@ class VendingMachine {
       // function 키워드로 쓰면 아래의 this가 this.btnPut 가리킴
       if (!this.inputCostEl.value) {
         modal.createModal("입금할 금액이 없네요.", "금액을 입력해주세요!");
+        modal.removeModal();
       }
       const inputCost = parseInt(this.inputCostEl.value);
       const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", "")); // 쉼표를 제거
@@ -59,7 +60,7 @@ class VendingMachine {
         // 입금액이 소지금보다 적다면
         if (inputCost <= myMoneyVal && inputCost > 0) {
           this.myMoney.textContent =
-            new Intl.NumberFormat().format(myMoneyVal - inputCost) + "원";
+            new Intl.NumberFormat().format(myMoneyVal - inputCost) + " 원";
           this.balance.textContent =
             new Intl.NumberFormat().format(
               (balanceVal ? balanceVal : 0) + inputCost
@@ -92,7 +93,7 @@ class VendingMachine {
       if (balanceVal) {
         this.myMoney.textContent =
           new Intl.NumberFormat().format(balanceVal + myMoneyVal) + " 원";
-        this.balance.textContent = "원";
+        this.balance.textContent = " 원";
       }
     });
 
@@ -167,11 +168,6 @@ class VendingMachine {
       let isGot = false;
       let totalPrice = 0;
 
-      if (totalPrice === 0) {
-        modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
-        modal.removeModal();
-      }
-
       // 내가 고른 아이스크림 목록과 이미 구입한 목록을 비교
       for (const itemStaged of this.stagedList.querySelectorAll("li")) {
         for (const itemGot of this.gotList.querySelectorAll("li")) {
@@ -202,9 +198,12 @@ class VendingMachine {
           itemGot.dataset.price *
           parseInt(itemGot.querySelector(".num-counter").textContent);
       });
-      this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(
-        totalPrice
-      )}원`;
+      this.txtTotal.textContent = `총금액 : ${new Intl.NumberFormat().format(totalPrice)} 원`;
+
+      if (this.txtTotal.textContent.length === 9) {
+        modal.createModal("주문할 품목이 없어요.", "상품을 클릭해주세요!");
+        modal.removeModal();
+      }
     });
   }
 }

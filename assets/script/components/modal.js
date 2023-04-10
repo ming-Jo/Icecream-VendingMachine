@@ -2,7 +2,6 @@ class Modal {
   constructor() {}
 
   createModal(text, textBold) {
-    console.log(text, textBold);
     const $body = document.querySelector("body");
 
     const modalWrap = document.createElement("article");
