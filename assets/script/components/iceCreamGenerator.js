@@ -1,5 +1,4 @@
 class IceCreamGenerator {
-  // constructor는 인스턴스 생성 및 초기화하는 메서드
   constructor() {
     this.itemList = document.querySelector(".list-item");
   }
@@ -20,7 +19,6 @@ class IceCreamGenerator {
     }
   }
 
-  // 아이스크림을 생산하는 함수입니다.
   iceFactory(data) {
     const docFrag = document.createDocumentFragment();
     data.forEach((el) => {
