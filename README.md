@@ -13,6 +13,9 @@
 
 <br>
 
+<img width="1397" alt="image" src="https://github.com/ming-Jo/icecream-vendingmachine/assets/112460344/a76ddaef-a4e3-4b57-a208-ed4ad33aa4c0">
+
+
 ### commit convention
 :sparkles: Feat: 새로운 기능 추가 <br />
 :label: MarkUp: 마크업 <br />
